@@ -1,0 +1,39 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+    -   id: trailing-whitespace
+        name: Check trailing whitespace
+    -   id: check-ast
+        name: Check if file is valid Python
+    -   id: requirements-txt-fixer
+        name: Sort entries in requirements.txt
+    -   id: detect-private-key
+        name: Detects the presence of private keys
+-   repo: https://github.com/psf/black
+    rev: 22.1.0
+    hooks:
+    -   id: black
+        name: Black - autoformatter
+-   repo: https://github.com/PyCQA/flake8
+    rev: 4.0.1
+    hooks:
+    -   id: flake8
+        name: flake8 - Check if code conforms to PEP8 standards
+-   repo: https://github.com/PyCQA/isort
+    rev: 5.10.1
+    hooks:
+    -   id: isort
+        name: isort - Sort imports
+-   repo: https://github.com/asottile/pyupgrade
+    rev: v2.31.1
+    hooks:
+    -   id: pyupgrade
+        name: pyupgrade - Update syntax to newest versions
+-   repo: https://github.com/pre-commit/mirrors-mypy
+    rev: v0.940
+    hooks:
+    -   id: mypy
+        name: mypy - Static type checker
