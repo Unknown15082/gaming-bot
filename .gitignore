@@ -1,0 +1,26 @@
+# Virtual environments
+venv/
+
+# Environment variables
+.env
+
+# Bytecode
+*.pyc
+__pycache__/
+
+# Databases
+*.sqlite3
+*.sqlite
+*.db
+
+# Visual Studio Code
+.vscode/
+
+# Sphinx documentation
+docs/_build/
+
+# Testing
+.pytest_cache/
+
+# Folder config file (Windows specific)
+[Dd]esktop.ini
