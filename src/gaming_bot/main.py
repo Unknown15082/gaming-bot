@@ -16,6 +16,7 @@ bot: commands.Bot = commands.Bot(intents=ALL_INTENTS, test_guilds=TEST_GUILDS)
 EXTENSIONS: list[str] = [
     "bot_events",
     "general_bot_commands",
+    "dice_roll_game.game_commands",
 ]
 
 for extension in EXTENSIONS:
