@@ -7,9 +7,11 @@ from dotenv import load_dotenv
 load_dotenv()
 
 TOKEN: str = env["TOKEN"]
+STR_TEST_GUILDS: str = env["TEST_GUILDS"]
+TEST_GUILDS: list[int] = [int(guild_id) for guild_id in STR_TEST_GUILDS.split(",")]
 ALL_INTENTS: disnake.Intents = disnake.Intents.all()
 
-bot: commands.Bot = commands.Bot(intents=ALL_INTENTS)
+bot: commands.Bot = commands.Bot(intents=ALL_INTENTS, test_guilds=TEST_GUILDS)
 
 EXTENSIONS: list[str] = [
     "bot_events",
