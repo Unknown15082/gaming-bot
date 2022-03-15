@@ -7,11 +7,7 @@ class DiceRollCog(commands.Cog):
         self.bot: commands.Bot = bot
 
     @commands.slash_command(name="dice")
-    async def group(self, inter: disnake.ApplicationCommandInteraction):
-        pass
-
-    @group.sub_command()
-    async def setup(self, inter: disnake.ApplicationCommandInteraction):
+    async def game(self, inter: disnake.ApplicationCommandInteraction):
         pass
 
 
