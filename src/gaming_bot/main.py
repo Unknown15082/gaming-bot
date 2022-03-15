@@ -6,12 +6,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-TOKEN = env["TOKEN"]
-ALL_INTENTS = disnake.Intents.all()
+TOKEN: str = env["TOKEN"]
+ALL_INTENTS: disnake.Intents = disnake.Intents.all()
 
-bot = commands.Bot(intents=ALL_INTENTS)
+bot: commands.Bot = commands.Bot(intents=ALL_INTENTS)
 
-EXTENSIONS = [
+EXTENSIONS: list[str] = [
     "bot_events",
 ]
 
