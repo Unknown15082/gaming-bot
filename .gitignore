@@ -24,3 +24,6 @@ docs/_build/
 
 # Folder config file (Windows specific)
 [Dd]esktop.ini
+
+# Mypy
+.mypy_cache/
