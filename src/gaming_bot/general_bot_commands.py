@@ -12,7 +12,7 @@ class GeneralBotCommands(commands.Cog):
     async def help(self, inter: disnake.ApplicationCommandInteraction) -> None:
         await inter.response.send_message("There is currently no help message.")
 
-    @commands.slash_command()
+    @commands.slash_command(name="invite")
     async def get_bot_invite_link(
         self, inter: disnake.ApplicationCommandInteraction
     ) -> None:
