@@ -13,6 +13,7 @@ bot: commands.Bot = commands.Bot(intents=ALL_INTENTS)
 
 EXTENSIONS: list[str] = [
     "bot_events",
+    "general_bot_commands",
 ]
 
 for extension in EXTENSIONS:

@@ -3,7 +3,7 @@ from disnake.ext import commands
 
 class BotEvents(commands.Cog):
     def __init__(self, bot: commands.Bot) -> None:
-        self.bot = bot
+        self.bot: commands.Bot = bot
 
     @commands.Cog.listener()
     async def on_ready(self) -> None:
