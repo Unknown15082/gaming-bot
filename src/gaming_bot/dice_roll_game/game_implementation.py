@@ -5,17 +5,10 @@ class DiceRollGame(object):
     def __init__(self, target: int) -> None:
         self.target: int = target  # The target number to achieve
         self.player_num: int = 2  # Currently default to 2 players
-        self.scores: list[int] = []
-        self.reset()  # Initialize the scores
+        self.scores: list[int] = [0] * self.player_num  # Initialize the scores
 
         self.current_player: int = 0  # The current player, 0-indexed
         self.accumulate: int = 0  # The total points of this current turn
-
-    def reset(self) -> None:
-        """
-        Return the scores of each player to 0.
-        """
-        self.scores = [0] * self.player_num
 
     def next_turn(self) -> None:
         """
