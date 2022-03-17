@@ -20,7 +20,7 @@ EXTENSIONS: list[str] = [
 ]
 
 for extension in EXTENSIONS:
-    bot.load_extension(extension)
+    bot.load_extension(f"gaming_bot.{extension}")
 
 if __name__ == "__main__":
     bot.run(TOKEN)
