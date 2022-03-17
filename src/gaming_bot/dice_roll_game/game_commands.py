@@ -12,15 +12,14 @@ class DiceRollCog(commands.Cog):
         # Set the game's ID as the player's ID
         user_id = inter.author.id
 
+        if current_game.check_if_exists(user_id):
+            await inter.response.send_message("You are already playing this game!")
+            return
+
         # TODO: Ask for the target score, currently default to 100
 
         new_game = game_implementation.DiceRollGame(100)
-
-        try:
-            current_game.add_game(user_id, new_game)
-        except Exception:
-            await inter.response.send_message("You are currently playing a game.")
-            return
+        current_game.update_game(user_id, new_game)
 
         # TODO: Represent a game using an embed
 
