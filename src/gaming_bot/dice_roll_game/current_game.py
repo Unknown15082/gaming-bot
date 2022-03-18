@@ -1,6 +1,6 @@
 from dice_roll_game import game_implementation as game
 
-from gaming_bot import exceptions
+from gaming_bot.utils import exceptions
 
 current_game_list: dict[int, game.DiceRollGame] = {}
 
