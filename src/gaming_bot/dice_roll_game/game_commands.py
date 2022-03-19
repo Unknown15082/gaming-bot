@@ -16,7 +16,7 @@ class DiceRollCog(commands.Cog):
             await inter.response.send_message("You are already playing this game!")
             return
 
-        # TODO: Ask for the target score, currently default to 100
+        # TODO: Ask for level of AI
 
         new_game = game_implementation.DiceRollGame(100)
         current_game.update_game(user_id, new_game)
