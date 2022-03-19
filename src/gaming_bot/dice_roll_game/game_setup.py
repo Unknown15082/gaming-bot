@@ -31,3 +31,4 @@ class DiceRollSetupButton(disnake.ui.Button):
         await inter.response.edit_message(
             content=f"The AI level is chosen to be {self.level + 1}...", view=view
         )
+        view.stop()

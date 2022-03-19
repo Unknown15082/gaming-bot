@@ -16,10 +16,13 @@ class DiceRollCog(commands.Cog):
         user_id = inter.author.id
 
         if current_game.check_if_exists(user_id):
-            await inter.response.send_message("You are already playing this game!")
+            await inter.send("You are already playing this game!")
             return
 
-        await inter.edit_original_message(view=DiceRollSetup())
+        ai_level_view = DiceRollSetup()
+        await inter.edit_original_message(view=ai_level_view)
+
+        ai_level = await ai_level_view.wait()  # noqa: F841
 
         new_game = game_implementation.DiceRollGame(100)
         current_game.update_game(user_id, new_game)
