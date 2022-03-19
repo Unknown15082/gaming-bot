@@ -1,5 +1,6 @@
 import disnake
 from dice_roll_game import current_game, game_implementation
+from dice_roll_game.game_setup import DiceRollSetup
 from disnake.ext import commands
 
 
@@ -9,6 +10,8 @@ class DiceRollCog(commands.Cog):
 
     @commands.slash_command(name="dice")
     async def game(self, inter: disnake.ApplicationCommandInteraction) -> None:
+        await inter.response.defer()
+
         # Set the game's ID as the player's ID
         user_id = inter.author.id
 
@@ -16,14 +19,12 @@ class DiceRollCog(commands.Cog):
             await inter.response.send_message("You are already playing this game!")
             return
 
-        # TODO: Ask for level of AI
+        await inter.edit_original_message(view=DiceRollSetup())
 
         new_game = game_implementation.DiceRollGame(100)
         current_game.update_game(user_id, new_game)
 
-        # TODO: Represent a game using an embed
-
-        await inter.response.send_message(f"A game was created with ID = {user_id}")
+        # TODO: Represent a game using a view
 
 
 def setup(bot: commands.Bot):
